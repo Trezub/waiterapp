@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Image = styled.ImageBackground`
     width: 100%;
@@ -26,7 +26,7 @@ export const ModalBody = styled.View`
 
 export const IngredientsContainer = styled.View`
     margin-top: 32px;
-    flex:1;
+    flex: 1;
 `;
 
 export const Ingredient = styled.View`

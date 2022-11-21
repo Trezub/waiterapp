@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Overlay = styled.div<{isVisible: boolean}>`
+export const Overlay = styled.div<{ isVisible: boolean }>`
     position: absolute;
     top: 0;
     left: 0;
@@ -9,9 +9,9 @@ export const Overlay = styled.div<{isVisible: boolean}>`
     position: fixed;
 
     transition: background-color 200ms ease-out, backdrop-filter 200ms ease-out;
-    background: rgba(0, 0, 0, ${({isVisible}) => isVisible ? 0.6 : 0});
-    backdrop-filter: blur(${({ isVisible }) => isVisible ? '4.5px' : '0px'});
-    pointer-events: ${({isVisible}) =>  isVisible ? 'unset' : 'none'};
+    background: rgba(0, 0, 0, ${({ isVisible }) => (isVisible ? 0.6 : 0)});
+    backdrop-filter: blur(${({ isVisible }) => (isVisible ? '4.5px' : '0px')});
+    pointer-events: ${({ isVisible }) => (isVisible ? 'unset' : 'none')};
 
     display: grid;
     place-items: center;
@@ -144,7 +144,8 @@ export const Actions = styled.footer`
             background: #444;
         }
 
-        :active, :disabled {
+        :active,
+        :disabled {
             filter: brightness(80%);
         }
 
@@ -156,7 +157,7 @@ export const Actions = styled.footer`
     .secondary {
         margin-top: 8px;
         padding: 14px 24px;
-        color: #D73035;
+        color: #d73035;
         font-weight: bold;
         border: none;
         background: transparent;

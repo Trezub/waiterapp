@@ -22,7 +22,7 @@ async function main() {
                             name: 'Frango',
                             price: 89_50,
                         },
-                    ]
+                    ],
                 },
             },
         },
@@ -33,23 +33,27 @@ async function main() {
             status: 'WAITING',
             items: {
                 createMany: {
-                    data: [{
-                        productId: 1,
-                        quantity: 2,
-                    },
-                    {
-                        productId: 2,
-                        quantity: 4,
-                    }],
-                }
-            }
+                    data: [
+                        {
+                            productId: 1,
+                            quantity: 2,
+                        },
+                        {
+                            productId: 2,
+                            quantity: 4,
+                        },
+                    ],
+                },
+            },
         },
     });
 }
 
-main().then(async () => {
-    await prisma.$disconnect();
-}).catch((err) => {
-    console.error(err);
-    process.exit(1);
-});
+main()
+    .then(async () => {
+        await prisma.$disconnect();
+    })
+    .catch((err) => {
+        console.error(err);
+        process.exit(1);
+    });

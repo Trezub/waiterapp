@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { FlatList, TouchableOpacity } from "react-native";
-import Product from "../../types/Product";
-import { formatCurrency } from "../../utils/formatCurrency";
-import { trpc } from "../../utils/trpc";
-import { Button } from "../Button";
-import { MinusCircle } from "../Icons/MinusCircle";
-import { PlusCircle } from "../Icons/PlusCircle";
-import { OrderConfirmedModal } from "../OrderConfirmedModal";
-import { Text } from "../Text";
+import { useState } from 'react';
+import { FlatList, TouchableOpacity } from 'react-native';
+import Product from '../../types/Product';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { trpc } from '../../utils/trpc';
+import { Button } from '../Button';
+import { MinusCircle } from '../Icons/MinusCircle';
+import { PlusCircle } from '../Icons/PlusCircle';
+import { OrderConfirmedModal } from '../OrderConfirmedModal';
+import { Text } from '../Text';
 import {
     Actions,
     Image,
@@ -17,7 +17,7 @@ import {
     QuantityContainer,
     Summary,
     TotalContainer,
-} from "./styles";
+} from './styles';
 
 export interface CartItem {
     product: Product;
@@ -47,7 +47,8 @@ export function Cart({
     const [orderConfirmedModalVisible, setOrderConfirmedModalVisible] =
         useState(false);
 
-    const { mutateAsync: createOrder, isLoading } = trpc.order.create.useMutation();
+    const { mutateAsync: createOrder, isLoading } =
+        trpc.order.create.useMutation();
 
     async function handleConfirmOrder() {
         await createOrder({

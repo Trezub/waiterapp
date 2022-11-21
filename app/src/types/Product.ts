@@ -1,5 +1,5 @@
-import { RouterOutput } from "../utils/trpc";
+import { RouterOutput } from '../utils/trpc';
 
-type Product = RouterOutput["product"]["getAll"][number];
+type Product = RouterOutput['product']['getAll'][number];
 
 export default Product;

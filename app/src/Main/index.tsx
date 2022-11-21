@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { ActivityIndicator } from "react-native";
-import { Button } from "../components/Button";
-import { Cart, CartItem } from "../components/Cart";
-import { Categories } from "../components/Categories";
-import { Header } from "../components/Header";
-import { Empty } from "../components/Icons/Empty";
-import { Menu } from "../components/Menu";
-import { TableModal } from "../components/TableModal";
-import { Text } from "../components/Text";
-import Product from "../types/Product";
-import { trpc } from "../utils/trpc";
+import { useState } from 'react';
+import { ActivityIndicator } from 'react-native';
+import { Button } from '../components/Button';
+import { Cart, CartItem } from '../components/Cart';
+import { Categories } from '../components/Categories';
+import { Header } from '../components/Header';
+import { Empty } from '../components/Icons/Empty';
+import { Menu } from '../components/Menu';
+import { TableModal } from '../components/TableModal';
+import { Text } from '../components/Text';
+import Product from '../types/Product';
+import { trpc } from '../utils/trpc';
 import {
     CategoriesContainer,
     CenteredContainer,
@@ -17,13 +17,13 @@ import {
     Footer,
     FooterContainer,
     MenuContainer,
-} from "./styles";
+} from './styles';
 
 export function Main() {
     const { data: products, isLoading } = trpc.product.getAll.useQuery();
 
     const [isModalVisible, setModalVisible] = useState(false);
-    const [selectedTable, setSelectedTable] = useState("");
+    const [selectedTable, setSelectedTable] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<number | null>(
         null
     );
@@ -78,7 +78,7 @@ export function Main() {
     }
 
     function handleClearOrder() {
-        setSelectedTable("");
+        setSelectedTable('');
         setCartItems([]);
     }
 
@@ -115,7 +115,9 @@ export function Main() {
                         ) : (
                             <CenteredContainer>
                                 <Empty />
-                                <Text color="#666" style={{ marginTop: 24 }} >Nenhum produto foi encontrado</Text>
+                                <Text color="#666" style={{ marginTop: 24 }}>
+                                    Nenhum produto foi encontrado
+                                </Text>
                             </CenteredContainer>
                         )}
                     </>
@@ -125,7 +127,11 @@ export function Main() {
                 <FooterContainer>
                     {!selectedTable && (
                         <Button
-                            disabled={isLoading || !filteredProducts || filteredProducts?.length === 0}
+                            disabled={
+                                isLoading ||
+                                !filteredProducts ||
+                                filteredProducts?.length === 0
+                            }
                             onPress={() => setModalVisible(true)}
                         >
                             Novo pedido

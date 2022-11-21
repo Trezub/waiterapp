@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Overlay = styled.KeyboardAvoidingView`
     background: rgba(0, 0, 0, 0.6);

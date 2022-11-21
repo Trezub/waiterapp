@@ -22,7 +22,7 @@ export function App() {
 
     return (
         <>
-            <Toaster position='top-right' />
+            <Toaster position="top-right" />
             <trpc.Provider client={trpcClient} queryClient={queryClient}>
                 <QueryClientProvider client={queryClient}>
                     <GlobalStyles />

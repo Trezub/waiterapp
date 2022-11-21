@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Board = styled.div`
     flex: 1;
@@ -49,5 +49,4 @@ export const OrdersContainer = styled.div`
             color: #666;
         }
     }
-
 `;

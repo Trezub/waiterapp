@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
 const isAndroid = Platform.OS === 'android';
@@ -21,5 +21,3 @@ export const Icon = styled.View`
     border: 1px solid rgba(0, 0, 0, 0.1);
     /* elevation: 2; */
 `;
-
-

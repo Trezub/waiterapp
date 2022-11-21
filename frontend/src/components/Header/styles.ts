@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.header`
-    background: #D73035;
+    background: #d73035;
     height: 198px;
     align-items: center;
     justify-content: center;

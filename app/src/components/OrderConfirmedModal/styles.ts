@@ -1,7 +1,7 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    background: #D73035;
+    background: #d73035;
     flex: 1;
     align-items: center;
     justify-content: center;

@@ -9,17 +9,19 @@ export const app = express();
 
 app.use('/uploads', express.static('uploads'));
 
-app.use(cors({
-    origin: '*',
-}));
+app.use(
+    cors({
+        origin: '*',
+    })
+);
 
 app.use(
     '/trpc',
     trpcExpress.createExpressMiddleware({
         router: appRouter,
         createContext: createExpressContext,
-        onError({error}) {
+        onError({ error }) {
             log.error(error);
-        }
-    }),
+        },
+    })
 );

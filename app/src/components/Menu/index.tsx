@@ -1,17 +1,17 @@
-import React, {useState} from "react";
-import { FlatList } from "react-native";
-import { formatCurrency } from "../../utils/formatCurrency";
-import { PlusCircle } from "../Icons/PlusCircle";
-import { ProductModal } from "../ProductModal";
+import React, { useState } from 'react';
+import { FlatList } from 'react-native';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { PlusCircle } from '../Icons/PlusCircle';
+import { ProductModal } from '../ProductModal';
 import TProduct from '../../types/Product';
-import { Text } from "../Text";
+import { Text } from '../Text';
 import {
     Product,
     ProductImage,
     ProductDetails,
     Separator,
     AddToCartButton,
-} from "./styles";
+} from './styles';
 
 export interface MenuProps {
     products: TProduct[];
@@ -19,14 +19,14 @@ export interface MenuProps {
 }
 
 export function Menu({ products, onAddToCart }: MenuProps) {
-
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState<TProduct | null>(null);
+    const [selectedProduct, setSelectedProduct] = useState<TProduct | null>(
+        null
+    );
 
     function handleOpenModal(product: TProduct) {
         setSelectedProduct(product);
         setIsModalVisible(true);
-
     }
 
     return (

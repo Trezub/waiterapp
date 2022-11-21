@@ -6,4 +6,3 @@ export const trpc = createTRPCReact<AppRouter>();
 
 export type RouterInput = inferRouterInputs<AppRouter>;
 export type RouterOutput = inferRouterOutputs<AppRouter>;
-

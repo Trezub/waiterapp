@@ -1,6 +1,6 @@
-import { TouchableOpacity } from "react-native";
-import { Text } from "../Text";
-import { Container, Content, OrderHeader, Table } from "./styles";
+import { TouchableOpacity } from 'react-native';
+import { Text } from '../Text';
+import { Container, Content, OrderHeader, Table } from './styles';
 
 interface HeaderProps {
     selectedTable: string;
@@ -35,7 +35,7 @@ export function Header({ selectedTable, onCancelOrder }: HeaderProps) {
                     </OrderHeader>
 
                     <Table>
-                        <Text weight="600">Mesa { selectedTable }</Text>
+                        <Text weight="600">Mesa {selectedTable}</Text>
                     </Table>
                 </Content>
             )}

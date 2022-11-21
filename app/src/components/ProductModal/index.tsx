@@ -1,9 +1,9 @@
-import { FlatList, Modal } from "react-native";
-import Product from "../../types/Product";
-import { formatCurrency } from "../../utils/formatCurrency";
-import { Button } from "../Button";
-import { Close } from "../Icons/Close";
-import { Text } from "../Text";
+import { FlatList, Modal } from 'react-native';
+import Product from '../../types/Product';
+import { formatCurrency } from '../../utils/formatCurrency';
+import { Button } from '../Button';
+import { Close } from '../Icons/Close';
+import { Text } from '../Text';
 import {
     CloseButton,
     Footer,
@@ -14,7 +14,7 @@ import {
     IngredientsContainer,
     ModalBody,
     PriceContainer,
-} from "./styles";
+} from './styles';
 
 export interface ProductModalProps {
     visible: boolean;
@@ -23,7 +23,12 @@ export interface ProductModalProps {
     onAddToCart: (product: Product) => void;
 }
 
-export function ProductModal({ visible, onClose, product, onAddToCart }: ProductModalProps) {
+export function ProductModal({
+    visible,
+    onClose,
+    product,
+    onAddToCart,
+}: ProductModalProps) {
     if (!product) {
         return null;
     }

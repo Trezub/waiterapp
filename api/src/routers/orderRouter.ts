@@ -42,8 +42,6 @@ export const orderRouter = router({
         )
         .mutation(async ({ input: { id, status } }) => {
             try {
-
-
                 await prisma.order.update({
                     where: {
                         id,
@@ -54,7 +52,10 @@ export const orderRouter = router({
                 });
                 emitter.emit('orderStatus', { id, status });
             } catch (err) {
-                if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2025') {
+                if (
+                    err instanceof Prisma.PrismaClientKnownRequestError &&
+                    err.code === 'P2025'
+                ) {
                     throw new TRPCError({
                         code: 'NOT_FOUND',
                         message: 'Order not found',
@@ -73,7 +74,10 @@ export const orderRouter = router({
                 });
                 emitter.emit('deleteOrder', { id });
             } catch (err) {
-                if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2025') {
+                if (
+                    err instanceof Prisma.PrismaClientKnownRequestError &&
+                    err.code === 'P2025'
+                ) {
                     throw new TRPCError({
                         code: 'NOT_FOUND',
                         message: 'Order not found',

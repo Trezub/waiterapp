@@ -61,7 +61,7 @@ export function OrderModal({
             x: 0,
             y: -40,
             opacity: 0,
-        }
+        },
     });
 
     async function handleUpdate(id: number, status: Order['status']) {
