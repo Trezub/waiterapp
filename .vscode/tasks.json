@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "npm",
+            "script": "dev",
+            "path": "api",
+            "label": "API",
+            "icon": {
+                "color": "terminal.ansiGreen",
+                "id": "server"
+            },
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "android",
+            "path": "app",
+            "label": "APP",
+            "icon": {
+                "color": "terminal.ansiBlue",
+                "id": "device-mobile"
+            },
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "dev",
+            "path": "frontend",
+            "label": "Frontend",
+            "icon": {
+                "color": "terminal.ansiCyan",
+                "id": "browser"
+            },
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
+            },
+            "problemMatcher": []
+        }
+    ]
+}
