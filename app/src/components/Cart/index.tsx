@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
 import Product from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
-import { trpc } from '../../utils/trpc';
+import { apiEndpoint, trpc } from '../../utils/trpc';
 import { Button } from '../Button';
 import { MinusCircle } from '../Icons/MinusCircle';
 import { PlusCircle } from '../Icons/PlusCircle';
@@ -78,7 +78,7 @@ export function Cart({
                             <ProductContainer>
                                 <Image
                                     source={{
-                                        uri: `http://192.168.1.100:3333/uploads/${cartItem.product.imagePath}`,
+                                        uri: `${apiEndpoint}/uploads/${cartItem.product.imagePath}`,
                                     }}
                                 />
                                 <QuantityContainer>

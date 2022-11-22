@@ -6,7 +6,7 @@ import 'intl/locale-data/jsonp/pt-BR';
 import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
-import { trpc } from './src/utils/trpc';
+import { apiEndpoint, trpc } from './src/utils/trpc';
 
 export default function App() {
     const [isFontsLoaded] = useFonts({
@@ -20,7 +20,7 @@ export default function App() {
         trpc.createClient({
             links: [
                 httpBatchLink({
-                    url: 'http://192.168.1.100:3333/trpc',
+                    url: `${apiEndpoint}/trpc`,
                 }),
             ],
         })

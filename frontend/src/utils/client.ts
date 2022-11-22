@@ -1,5 +1,5 @@
 import { createTRPCProxyClient, createWSClient, wsLink } from '@trpc/client';
-import type { AppRouter } from '../../../api-trpc';
+import type { AppRouter } from '../../../api';
 
 // create persistent WebSocket connection
 const wsClient = createWSClient({

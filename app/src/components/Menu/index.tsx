@@ -12,6 +12,7 @@ import {
     Separator,
     AddToCartButton,
 } from './styles';
+import { apiEndpoint } from '../../utils/trpc';
 
 export interface MenuProps {
     products: TProduct[];
@@ -47,7 +48,7 @@ export function Menu({ products, onAddToCart }: MenuProps) {
                     <Product onPress={() => handleOpenModal(product)}>
                         <ProductImage
                             source={{
-                                uri: `http://192.168.1.100:3333/uploads/${product.imagePath}`,
+                                uri: `${apiEndpoint}/uploads/${product.imagePath}`,
                             }}
                         />
                         <ProductDetails>

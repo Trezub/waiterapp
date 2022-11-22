@@ -1,6 +1,7 @@
 import { FlatList, Modal } from 'react-native';
 import Product from '../../types/Product';
 import { formatCurrency } from '../../utils/formatCurrency';
+import { apiEndpoint } from '../../utils/trpc';
 import { Button } from '../Button';
 import { Close } from '../Icons/Close';
 import { Text } from '../Text';
@@ -47,7 +48,7 @@ export function ProductModal({
         >
             <Image
                 source={{
-                    uri: `http://192.168.1.100:3333/uploads/${product.imagePath}`,
+                    uri: `${apiEndpoint}/uploads/${product.imagePath}`,
                 }}
             >
                 <CloseButton onPress={onClose}>
